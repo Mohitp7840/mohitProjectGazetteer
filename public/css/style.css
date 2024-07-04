@@ -1,0 +1,442 @@
+#map {
+    height: calc(100vh - 56px);
+    width: 100%;
+}
+
+.custom-buttons-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.custom-button {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border: 2px solid rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #6d4f4f;
+}
+
+.custom-button:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.custom-button:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.centered-popup {
+    transform: translate(-50%, -50%);
+}
+
+.leaflet-popup-content-wrapper {
+    padding: 0;
+    overflow: hidden;
+}
+
+.country-info-popup {
+    padding: 15px;
+    max-width: 300px;
+}
+
+.country-info-popup h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.country-info-popup table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.country-info-popup td {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.country-info-popup td:first-child {
+    font-weight: bold;
+    width: 40%;
+}
+
+.country-info-popup img {
+    vertical-align: middle;
+}
+
+.weather-popup .leaflet-popup-content-wrapper {
+    background-color: #f8f9fa;
+    color: #333;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.weather-popup .leaflet-popup-content {
+    margin: 0;
+}
+
+.weather-info-popup {
+    padding: 15px;
+    max-width: 300px;
+}
+
+.weather-info-popup h3 {
+    background-color: #dc3545;
+    color: white;
+    margin: -15px -15px 10px -15px;
+    padding: 10px;
+    text-align: center;
+}
+
+.weather-info-popup h4 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.current-weather {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.current-weather img {
+    width: 50px;
+    height: 50px;
+}
+
+.current-weather .temperature {
+    font-size: 2em;
+    margin: 0 10px;
+}
+
+.current-weather .description {
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.forecast-item {
+    text-align: center;
+}
+
+.forecast-item h5 {
+    margin: 0;
+}
+
+.forecast-item img {
+    width: 30px;
+    height: 30px;
+}
+
+.forecast-item p {
+    margin: 2px 0;
+}
+
+
+.currency-converter {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+.currency-converter h3 {
+    color: #e74c3c;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.currency-converter p {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.currency-converter input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.currency-converter input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.currency-converter #result {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.leaflet-popup-content-wrapper {
+    padding: 0;
+    overflow: hidden;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+    width: 300px !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    color: #e74c3c;
+    padding: 8px 8px 0 0;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover {
+    color: #c0392b;
+}
+
+.wikipedia-popup .leaflet-popup-content-wrapper {
+    background-color: #f8f9fa;
+    color: #333;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.wikipedia-popup .leaflet-popup-content {
+    margin: 0;
+    width: 300px !important;
+}
+
+.wikipedia-info-popup {
+    padding: 15px;
+}
+
+.wikipedia-info-popup h3 {
+    background-color: #3498db;
+    color: white;
+    margin: -15px -15px 10px -15px;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.wikipedia-info-popup p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.wikipedia-info-popup a {
+    display: inline-block;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.wikipedia-info-popup a:hover {
+    text-decoration: underline;
+}
+
+
+.news-popup .leaflet-popup-content-wrapper {
+    background-color: #f8f9fa;
+    color: #333;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.news-popup .leaflet-popup-content {
+    margin: 0;
+    width: 300px !important;
+}
+
+.news-info-popup {
+    padding: 15px;
+}
+
+.news-info-popup h3 {
+    background-color: #e74c3c;
+    color: white;
+    margin: -15px -15px 10px -15px;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.news-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.news-item p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.news-item a {
+    display: inline-block;
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+.news-info-popup .leaflet-popup-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.airport-icon {
+    background: none;
+    border: none;
+}
+
+.airport-icon-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3498db;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.airport-icon-inner i {
+    transform: rotate(45deg);
+    color: white;
+    font-size: 14px;
+}
+
+.custom-cluster-icon {
+    background-color: rgba(52, 152, 219, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.cluster-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.custom-div-icon.airport-icon.small {
+    font-size: 10px;
+}
+
+.custom-div-icon.airport-icon.small .airport-icon-inner {
+    width: 20px;
+    height: 20px;
+}
+
+.custom-div-icon.city-icon {
+    position: relative;
+    background: none;
+    border: none;
+}
+
+.custom-div-icon.city-icon .fa-map-marker-alt {
+    font-size: 40px;
+    color: #3498db;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+
+.custom-div-icon.city-icon.capital .fa-map-marker-alt {
+    color: #e74c3c;
+}
+
+.custom-div-icon.city-icon .city-inner-icon {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: white;
+}
+
+.custom-cluster-icon.city-cluster {
+    background-color: rgba(52, 152, 219, 0.8);
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.cluster-icon {
+    line-height: 36px;
+    font-size: 14px;
+}
+
+.custom-div-icon.university-icon {
+    background: none;
+    border: none;
+}
+
+.custom-div-icon.university-icon .fa-graduation-cap {
+    font-size: 30px;
+    color: #8e44ad;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
