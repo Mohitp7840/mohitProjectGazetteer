@@ -1,0 +1,8 @@
+<?php
+
+define('GEONAMES_USERNAME', 'mohitkumar');
+define('OPENWEATHER_API_KEY', '532468df42b141d58e6141143240409');
+define('MEDIASTACK_API_KEY', '208eec5be95a92f4b789c5e0932d5548');
+define('EXCHANGE_RATE_API_KEY', '4c2a510483e6f1eb1dd6676c');
+
+?>
