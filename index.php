@@ -149,7 +149,7 @@ $countries = getCountryList();
   </div>
 </div>
 
-<div id="newsModal" class="modal fade" tabindex="-1">
+<div id="newsModal" class="modal" data-bs-backdrop="false" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
     <div class="modal-content">
       <div class="modal-header bg-primary text-white">
@@ -166,7 +166,7 @@ $countries = getCountryList();
   </div>
 </div>
 
-<div id="wikiModal" class="modal fade" tabindex="-1">
+<div id="wikiModal" class="modal" data-bs-backdrop="false" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header bg-info text-white">
@@ -184,7 +184,7 @@ $countries = getCountryList();
   </div>
 </div>
 
-<div id="currencyModal" class="modal fade" tabindex="-1">
+<div id="currencyModal" class="modal" data-bs-backdrop="false" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable custom-modal-size">
     <div class="modal-content">
       <div class="modal-header bg-success text-white">
