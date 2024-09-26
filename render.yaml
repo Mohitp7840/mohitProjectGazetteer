@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: your-app-name
+    env: php
+    buildCommand: composer install
+    startCommand: php -S 0.0.0.0:$PORT -t public
+    envVars:
+      - key: PORT
+        value: 8080
