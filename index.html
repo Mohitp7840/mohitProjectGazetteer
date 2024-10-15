@@ -1,9 +1,3 @@
-<?php
-
-require_once 'php/functions.php';
-
-$countries = getCountryList();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +18,6 @@ $countries = getCountryList();
 
     <div id="selectContainer">
         <select id="countrySelect" class="form-select shadow-sm">
-            <?php foreach ($countries as $code => $name): ?>
-                <option value="<?php echo $code; ?>"><?php echo $name; ?></option>
-            <?php endforeach; ?>
         </select>
     </div>
 

@@ -1,29 +1,6 @@
 <?php
 require_once 'config.php';
 
-function getCountryList() {
-    $filePath = dirname(__FILE__) . '/../data/countryBorders.geo.json';
-    if (!file_exists($filePath)) {
-        error_log("countryBorders.geo.json file not found at: " . $filePath);
-        return [];
-    }
-    $countryData = json_decode(file_get_contents($filePath), true);
-    if (json_last_error() !== JSON_ERROR_NONE) {
-        error_log("Error decoding JSON: " . json_last_error_msg());
-        return [];
-    }
-    $countries = [];
-    foreach ($countryData['features'] as $feature) {
-        $code = $feature['properties']['iso_a2'] ?? '';
-        $name = $feature['properties']['name'] ?? '';
-        if ($code && $name) {
-            $countries[$code] = $name;
-        }
-    }
-    asort($countries);
-    return $countries;
-}
-
 function getCountryBorders($countryCode) {
     $filePath = dirname(__FILE__) . '/../data/countryBorders.geo.json';
     if (!file_exists($filePath)) {

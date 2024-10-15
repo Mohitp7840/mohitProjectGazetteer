@@ -124,6 +124,7 @@ var currencyBtn = L.easyButton("fa-money-bill-wave fa-xl", function (btn, map) {
 // initialise and add controls once DOM is ready
 
 $(document).ready(function () {
+  getCountryNamesAndCodes();
   map = L.map("map", {
     layers: [streets],
   }).setView([0, 0], 2);
@@ -139,7 +140,7 @@ $(document).ready(function () {
   airports.addTo(map);
   cities.addTo(map);
 
-  // Get user's location
+   // Get user's location
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(
       function (position) {
@@ -168,6 +169,24 @@ $(document).ready(function () {
 // ---------------------------------------------------------
 // FUNCTIONS
 // ---------------------------------------------------------
+
+function getCountryNamesAndCodes() {
+  $.ajax({
+      url: "php/getCountry.php",
+      type: "GET",
+      dataType: "json",
+      success: function(countries) {
+          let options = "";
+          for (let country of countries) {
+              options += `<option value="${country[1]}">${country[0]}</option>`;
+          }
+          $("#countrySelect").append(options);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+          console.error("Error fetching country data:", textStatus, errorThrown);
+      }
+  });
+}
 
 function fetchCountryBorders(countryCode) {
   $.ajax({
