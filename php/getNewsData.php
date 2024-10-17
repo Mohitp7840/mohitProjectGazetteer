@@ -21,7 +21,8 @@ if (isset($_GET['country'])) {
                     'title' => $article['title'],
                     'description' => $article['description'],
                     'url' => $article['url'],
-                    'publishedAt' => $article['published_at']
+                    'publishedAt' => $article['published_at'],
+                    'source' => $article['source']
                 ];
             }, $data['data']);
             

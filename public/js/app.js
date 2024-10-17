@@ -290,13 +290,13 @@ function populateWeatherModal(data) {
   $("#weatherCity").text(data.location);
   $("#weatherDescription").text(data.current.condition);
   $("#weatherIcon").attr("src", data.current.icon);
-  $("#tempMax").text(data.current.temp_c + "°C");
-  $("#tempMin").text(data.current.feelslike_c + "°C");
+  $("#tempMax").text(Math.round(data.current.temp_c) + "°C");
+  $("#tempMin").text(Math.round(data.current.feelslike_c) + "°C");
   for (let i = 1; i <= 2; i++) {
     $(`#forecastDay${i}`).text(data.forecast[i - 1].date);
     $(`#forecastIcon${i}`).attr("src", data.forecast[i - 1].icon);
-    $(`#forecastTempMax${i}`).text(data.forecast[i - 1].maxtemp_c + "°C");
-    $(`#forecastTempMin${i}`).text(data.forecast[i - 1].mintemp_c + "°C");
+    $(`#forecastTempMax${i}`).text(Math.round(data.forecast[i - 1].maxtemp_c) + "°C");
+    $(`#forecastTempMin${i}`).text(Math.round(data.forecast[i - 1].mintemp_c) + "°C");
   }
   $("#lastUpdated").text(data.current.last_updated);
 }
@@ -328,30 +328,29 @@ function fetchNewsData(countryCode) {
 function populateNewsModal(news, countryName) {
   $("#newsCountry").text(countryName);
   let newsHtml = "";
-  if (news && news.length > 0) {
+  if (Array.isArray(news) && news.length > 0) {
     news.forEach((article) => {
-      newsHtml += `
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">${article.title}</h5>
-            <p class="card-text">${
-              article.description || "No description available."
-            }</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <a href="${
-                article.url
-              }" target="_blank" class="btn btn-primary btn-sm">Read More</a>
-              <small class="text-muted">Published on ${new Date(
-                article.publishedAt
-              ).toLocaleDateString()}</small>
+      if (article && typeof article === 'object') {
+        const title = article.title || 'No title available';
+        const url = article.url || '#';
+        const description = article.description || 'No description available.';
+        const sourceName = article.source || 'Unknown source';
+        
+        newsHtml += `
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="${url}" target="_blank" class="text-dark">${title}</a>
+              </h5>
+              <p class="card-text">${description}</p>
+              <small class="text-muted">Source: ${sourceName}</small>
             </div>
           </div>
-        </div>
-      `;
+        `;
+      }
     });
   } else {
-    newsHtml =
-      '<div class="alert alert-info">No news available for this country at the moment.</div>';
+    newsHtml = '<div class="alert alert-info">No news available for this country at the moment.</div>';
   }
   $("#newsList").html(newsHtml);
 }
